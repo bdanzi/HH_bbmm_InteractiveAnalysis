@@ -17,6 +17,7 @@ class sample:
             self.name = name
 
 ### color labels ###
+HHbbmumu = ROOT.kMagenta+3
 ZZcolor = ROOT.kViolet-9
 TTcolor = ROOT.kRed+2
 TTdilepcolor = ROOT.kAzure-9
@@ -36,6 +37,13 @@ CHWcolor = ROOT.kAzure+10
 EWVBScolor = ROOT.kOrange+10
 QCDVBScolor = ROOT.kViolet+2
 WWJJcolor = ROOT.kMagenta-4
+########### Signal samples bbmumu ###################
+HHbbmumu_SM_UL2018 = sample(HHbbmumu, 1, 1001, "HH --> bb\mu\mu", "HHbbmumu_SM_UL2018")
+HHbbmumu_SM_UL2018.year = "UL2018"
+HHbbmumu_SM_UL2018.dataset = "/HIG-RunIISummer20UL18wmLHEGEN_HH_bbmumu_13TeV-powheg_500k/bdanzi-NANOAOD-00000000000000000000000000000000/USER"
+
+HHbbmumu_SM_UL2018.sigma = 0.03105 #pb NLO
+
 ######### UL2016APV ##########
 
 ### ZZtoLep ###
@@ -3444,6 +3452,11 @@ VBS_SSWW_aQGC_ULRunII.components = [
     VBS_SSWW_aQGC_UL2018,
 ]
 
+### bbmumu sample ######
+
+
+
+########################
 DataMuA_UL2018 = sample(ROOT.kBlack, 1, 1001, "Data", "DataMuA_UL2018")
 DataMuA_UL2018.runP = 'A'
 DataMuA_UL2018.year = "UL2018"
@@ -3682,6 +3695,7 @@ SampleHTFake_UL2018.components = [
 ########################################################
 
 sample_dict={
+    "HHbbmumu_SM_UL2018": HHbbmumu_SM_UL2018,
     "ZZtoLep_UL2016APV":ZZtoLep_UL2016APV,
     "ZZTo2L2Nu_UL2016APV":ZZTo2L2Nu_UL2016APV, "ZZTo4L_UL2016APV":ZZTo4L_UL2016APV, "GluGluToContinToZZTo4e_UL2016APV":GluGluToContinToZZTo4e_UL2016APV, "GluGluToContinToZZTo2e2mu_UL2016APV":GluGluToContinToZZTo2e2mu_UL2016APV, "GluGluToContinToZZTo2e2tau_UL2016APV":GluGluToContinToZZTo2e2tau_UL2016APV,"GluGluToContinToZZTo2mu2nu_UL2016APV":GluGluToContinToZZTo2mu2nu_UL2016APV, "GluGluToContinToZZTo4mu_UL2016APV":GluGluToContinToZZTo4mu_UL2016APV, "GluGluToContinToZZTo2mu2tau_UL2016APV":GluGluToContinToZZTo2mu2tau_UL2016APV, "GluGluToContinToZZTo2tau2nu_UL2016APV":GluGluToContinToZZTo2tau2nu_UL2016APV, "GluGluToContinToZZTo4tau_UL2016APV":GluGluToContinToZZTo4tau_UL2016APV, "GluGluToContinToZZTo2e2nu_UL2016APV":GluGluToContinToZZTo2e2nu_UL2016APV,
     "TT_UL2016APV":TT_UL2016APV,
@@ -4030,6 +4044,7 @@ crab_dict = {
 
     ##### UL2018 #####
     "UL2018":[
+        HHbbmumu_SM_UL2018,
         ZZtoLep_UL2018,
         TT_UL2018,
         TTTo2L2Nu_UL2018,
@@ -4491,6 +4506,7 @@ class_list = [
     DataEle_UL2016M,
 '''
 class_list = [
+    
     #WpWpJJ_EWK_UL2017,
     VBS_SSWW_SM_UL2017,
     #VBS_SSWW_LL_SM_UL2017,
@@ -4514,6 +4530,7 @@ class_list = [
     WZ_UL2017,
     WrongSign_UL2017,
     DYJetsToLL_FxFx_UL2017,
+    HHbbmumu_SM_UL2018,
     #DYJetsToLL_UL2017,
     TTTo2L2Nu_UL2017,
     #TT_UL2017,
@@ -4629,6 +4646,7 @@ class_list = [
 """
 
 stack_list = [
+    HHbbmumu_SM_UL2018,
     WpWpJJ_EWK_UL2016APV,
     #VBS_SSWW_SM_UL2016APV,
     VBS_SSWW_LL_SM_UL2016APV,

@@ -43,9 +43,7 @@ using rvec_f = const RVec<float> &;
 using rvec_i = const RVec<int> &;
 using rvec_b = const RVec<bool> &;
 
-const string remote_storage = "https://vbs-pg-support.web.cern.ch/nanoAOD-tools/";
-
-//cout<<"ciao"<<endl;
+const string remote_storage = "https://bdanzi.web.cern.ch/nanoAOD-tools/";
 
 bool Pass_min_req(rvec_b Muon_looseId, rvec_f Muon_pt, rvec_f Muon_pfRelIso04_all, rvec_f Muon_eta, rvec_b Electron_mvaFall17V2Iso_WPL, rvec_f Electron_jetRelIso, rvec_f Electron_pt, rvec_f Electron_eta, rvec_i Tau_idDeepTau2017v2p1VSjet, rvec_i Tau_idDeepTau2017v2p1VSe, rvec_i Tau_idDeepTau2017v2p1VSmu, rvec_f Tau_pt, rvec_f Tau_eta, rvec_f Jet_pt, rvec_f Jet_eta, rvec_i Jet_puId)
 {
@@ -1818,7 +1816,7 @@ std::pair<float, float> BTagCalibrationReader::min_max_pt(BTagEntry::JetFlavor j
 //BTagCalibration calibration_UL2016APV("deepjet", "DeepJet_106XUL16preVFPSF_v1_new.csv");
 //BTagCalibration calibration_UL2016("deepjet", "DeepJet_106XUL16postVFPSF_v2_new.csv");
 BTagCalibration calibration_UL2017("deepjet", "DeepJet_106XUL17_v3_new.csv");
-//BTagCalibration calibration_UL2018("deepjet", "DeepJet_106XUL18_v2_new.csv");
+BTagCalibration calibration_UL2018("deepjet", "DeepJet_106XUL18_v2_new.csv");
 
 vector<string> v_systs{"up", "down"};
 //BTagCalibrationReader reader_0_Legacy2016(BTagEntry::OP_LOOSE,"central",v_systs); //0 is wp_btv
@@ -1832,10 +1830,10 @@ vector<string> v_systs{"up", "down"};
 //BTagCalibrationReader reader_2_2018(BTagEntry::OP_TIGHT,"central",v_systs); 
 
 //BTagCalibrationReader reader_0_UL2016APV(BTagEntry::OP_LOOSE,"central",v_systs); //0 is wp_btv
-//BTagCalibrationReader reader_1_UL2016APV(BTagEntry::OP_MEDIUM,"central",v_systs);
+BTagCalibrationReader reader_1_UL2016APV(BTagEntry::OP_MEDIUM,"central",v_systs);
 //BTagCalibrationReader reader_2_UL2016APV(BTagEntry::OP_TIGHT,"central",v_systs); 
 //BTagCalibrationReader reader_0_UL2016(BTagEntry::OP_LOOSE,"central",v_systs); //0 is wp_btv
-//BTagCalibrationReader reader_1_UL2016(BTagEntry::OP_MEDIUM,"central",v_systs);
+BTagCalibrationReader reader_1_UL2016(BTagEntry::OP_MEDIUM,"central",v_systs);
 //BTagCalibrationReader reader_2_UL2016(BTagEntry::OP_TIGHT,"central",v_systs); 
 
 //BTagCalibrationReader reader_0_UL2017(BTagEntry::OP_LOOSE,"central",v_systs); //0 is wp_btv
@@ -1843,7 +1841,7 @@ BTagCalibrationReader reader_1_UL2017(BTagEntry::OP_MEDIUM,"central",v_systs);
 //BTagCalibrationReader reader_2_UL2017(BTagEntry::OP_TIGHT,"central",v_systs); 
 
 //BTagCalibrationReader reader_0_UL2018(BTagEntry::OP_LOOSE,"central",v_systs); //0 is wp_btv
-//BTagCalibrationReader reader_1_UL2018(BTagEntry::OP_MEDIUM,"central",v_systs);
+BTagCalibrationReader reader_1_UL2018(BTagEntry::OP_MEDIUM,"central",v_systs);
 //BTagCalibrationReader reader_2_UL2018(BTagEntry::OP_TIGHT,"central",v_systs); 
 
 

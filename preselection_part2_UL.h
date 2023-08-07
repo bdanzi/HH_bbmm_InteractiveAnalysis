@@ -233,26 +233,89 @@ RVec<RVec<float>> btagSF(rvec_f Jet_pt, rvec_f Jet_eta, rvec_i Jet_hadronFlavour
         }
         */
         
-        if(flavor_btv_int == 0){
+        if(flavor_btv_int == 0 && era == "UL2017"){
             sf = reader_1_UL2017.eval_auto_bounds("central", BTagEntry::FLAV_B, eta, pt);
             sf_up = reader_1_UL2017.eval_auto_bounds("up", BTagEntry::FLAV_B, eta, pt);
             sf_down = reader_1_UL2017.eval_auto_bounds("down", BTagEntry::FLAV_B, eta, pt);
         }
-        else if(flavor_btv_int == 1){
+        else if(flavor_btv_int == 1 && era == "UL2017"){
             sf = reader_1_UL2017.eval_auto_bounds("central", BTagEntry::FLAV_C, eta, pt);
             sf_up = reader_1_UL2017.eval_auto_bounds("up", BTagEntry::FLAV_C, eta, pt);
             sf_down = reader_1_UL2017.eval_auto_bounds("down", BTagEntry::FLAV_C, eta, pt);
         }
         else {
+            if(era == "UL2017"){
             sf = reader_1_UL2017.eval_auto_bounds("central", BTagEntry::FLAV_UDSG, eta, pt);
             sf_up = reader_1_UL2017.eval_auto_bounds("up", BTagEntry::FLAV_UDSG, eta, pt);
             sf_down = reader_1_UL2017.eval_auto_bounds("down", BTagEntry::FLAV_UDSG, eta, pt);
+            }
             //cout<<"sf is "<<sf<<endl;
             //cout<<"sf_up is "<<sf_up<<endl;
             //cout<<"sf_down is "<<sf_down<<endl;
         }
         
+        if(flavor_btv_int == 0 && era == "UL2018"){
+            sf = reader_1_UL2018.eval_auto_bounds("central", BTagEntry::FLAV_B, eta, pt);
+            sf_up = reader_1_UL2018.eval_auto_bounds("up", BTagEntry::FLAV_B, eta, pt);
+            sf_down = reader_1_UL2018.eval_auto_bounds("down", BTagEntry::FLAV_B, eta, pt);
+        }
+        else if(flavor_btv_int == 1 && era == "UL2018"){
+            sf = reader_1_UL2018.eval_auto_bounds("central", BTagEntry::FLAV_C, eta, pt);
+            sf_up = reader_1_UL2018.eval_auto_bounds("up", BTagEntry::FLAV_C, eta, pt);
+            sf_down = reader_1_UL2018.eval_auto_bounds("down", BTagEntry::FLAV_C, eta, pt);
+        }
+        else {
+            if(era == "UL2018"){
+            sf = reader_1_UL2018.eval_auto_bounds("central", BTagEntry::FLAV_UDSG, eta, pt);
+            sf_up = reader_1_UL2018.eval_auto_bounds("up", BTagEntry::FLAV_UDSG, eta, pt);
+            sf_down = reader_1_UL2018.eval_auto_bounds("down", BTagEntry::FLAV_UDSG, eta, pt);
+            }
+            //cout<<"sf is "<<sf<<endl;
+            //cout<<"sf_up is "<<sf_up<<endl;
+            //cout<<"sf_down is "<<sf_down<<endl;
+        }
         
+        if(flavor_btv_int == 0 && era == "UL2016"){
+            sf = reader_1_UL2016.eval_auto_bounds("central", BTagEntry::FLAV_B, eta, pt);
+            sf_up = reader_1_UL2016.eval_auto_bounds("up", BTagEntry::FLAV_B, eta, pt);
+            sf_down = reader_1_UL2016.eval_auto_bounds("down", BTagEntry::FLAV_B, eta, pt);
+        }
+        else if(flavor_btv_int == 1 && era == "UL2016"){
+            sf = reader_1_UL2016.eval_auto_bounds("central", BTagEntry::FLAV_C, eta, pt);
+            sf_up = reader_1_UL2016.eval_auto_bounds("up", BTagEntry::FLAV_C, eta, pt);
+            sf_down = reader_1_UL2016.eval_auto_bounds("down", BTagEntry::FLAV_C, eta, pt);
+        }
+        else {
+            if(era == "UL2016"){
+            sf = reader_1_UL2016.eval_auto_bounds("central", BTagEntry::FLAV_UDSG, eta, pt);
+            sf_up = reader_1_UL2016.eval_auto_bounds("up", BTagEntry::FLAV_UDSG, eta, pt);
+            sf_down = reader_1_UL2016.eval_auto_bounds("down", BTagEntry::FLAV_UDSG, eta, pt);
+            }
+            //cout<<"sf is "<<sf<<endl;
+            //cout<<"sf_up is "<<sf_up<<endl;
+            //cout<<"sf_down is "<<sf_down<<endl;
+        }
+        
+        if(flavor_btv_int == 0 && era == "UL2016APV"){
+            sf = reader_1_UL2016APV.eval_auto_bounds("central", BTagEntry::FLAV_B, eta, pt);
+            sf_up = reader_1_UL2016APV.eval_auto_bounds("up", BTagEntry::FLAV_B, eta, pt);
+            sf_down = reader_1_UL2016APV.eval_auto_bounds("down", BTagEntry::FLAV_B, eta, pt);
+        }
+        else if(flavor_btv_int == 1 && era == "UL2016APV"){
+            sf = reader_1_UL2016APV.eval_auto_bounds("central", BTagEntry::FLAV_C, eta, pt);
+            sf_up = reader_1_UL2016APV.eval_auto_bounds("up", BTagEntry::FLAV_C, eta, pt);
+            sf_down = reader_1_UL2016APV.eval_auto_bounds("down", BTagEntry::FLAV_C, eta, pt);
+        }
+        else {
+            if(era == "UL2016APV"){
+            sf = reader_1_UL2016APV.eval_auto_bounds("central", BTagEntry::FLAV_UDSG, eta, pt);
+            sf_up = reader_1_UL2016APV.eval_auto_bounds("up", BTagEntry::FLAV_UDSG, eta, pt);
+            sf_down = reader_1_UL2016APV.eval_auto_bounds("down", BTagEntry::FLAV_UDSG, eta, pt);
+            }
+            //cout<<"sf is "<<sf<<endl;
+            //cout<<"sf_up is "<<sf_up<<endl;
+            //cout<<"sf_down is "<<sf_down<<endl;
+        }
         
         // check if SF is OK
         if (sf < 0.01) sf = 1.;
